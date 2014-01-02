@@ -1,0 +1,31 @@
+﻿{
+  "name" : "广播批量删除器",
+  "manifest_version": 2,
+  "version" : "0.1",
+  "description" : "广播批量删除器",
+  "browser_action": {
+      "default_icon": "doubanicon-24.png",
+      "default_title": "广播批量删除器"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://www.douban.com/people/*"
+      ],
+      "js" : ["jquery-1.7.2.min.js","underscore-min.js","update.js"],
+      "run_at" : "document_end",
+      "all_frames" : false
+    }
+  ],
+    "permissions": [
+        "tabs",	
+        "http://www.douban.com/*",
+        "http://api.douban.com/people/*"
+    ],
+    "web_accessible_resources": [
+        "images/ico-voice.gif",
+        "images/tqq_voice.png",
+        "test.wav",
+        "voice_font.svg"
+    ]
+}
